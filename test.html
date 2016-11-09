@@ -8,14 +8,74 @@
 		{ 
 			width: 50%;
 			border: 1px solid black;
+			border-collapse: collapse;
 			text-align: center;
 		}
+		td,th
+		{
+			padding: 15px;
+		}
+		table#Book-list th
+		{
+			color: white;
+			background-color: black;
+		}
+		table#Book-list tr:nth-child(even)
+		{
+			background-color: lightgrey;
+		}
+		table#Book-list tr:nth-child(odd)
+		{
+			background-color: white;
+		}
+		ul
+		{
+			list-style-type:none;
+			margin: 0;
+			padding: 0;
+			background: #111111;
+			overflow: hidden;
+			text-decoration: none;
+
+		}
+		li
+		{
+			float: left;
+
+		}
+		li a
+		{
+			display: block;
+			text-align: center;
+			padding: 20px;
+			padding-left: 80px;
+			color: white;
+			text-decoration: none;
+			font-size: 200%;
+		}
+		li a:hover
+		{
+			background-color: blue;
+		}
+
+
 	</style>
 </head>
 <body style="background: rgb(131,144,131);">
 	<h1>
 	Test Web Page
 	</h1>
+
+     <!-- Horizontal List like Menu -->
+     <ul>
+     	<li><a href="#Home">Home</a></li>
+     	<li><a href="#Category">Category</a></li>
+     	<li><a href="#Treading">Treading</a></li>
+     	<li><a href="#New-Books">New Books</a></li>
+     	<li><a href="#Add-Book">Add Book</a></li>
+     	<li><a href="#about">About</a></li>
+
+     </ul>
 	<hr>
 	<p>
 		This is my first <b>HTML</b> page. Wish me luck.<br><br />I am trying to learn html from <a href="http:/www.w3schools.com">W3schools</a>
@@ -24,12 +84,12 @@
 	<p>
 		Lets try to add a image.
 	</p>
-	<img src="297012.jpg" width="500" height="300" title="Inspiratonal image">
+	<!--img src="297012.jpg" width="500" height="300" title="Inspiratonal image"-->
 
 	<!--Table Test-->
 	<h3>Book list:</h3>
-	<table>
-		<!--Adding Table Head-->
+	<table id="Book-list">
+		<!--Adding Table Heads-->
 		<th>Book Name</th>
 		<th>Author</th>
 		<th>Edition</th>
@@ -59,6 +119,7 @@
 
 
 	</table>
+
 
 
 
