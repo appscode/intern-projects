@@ -2,11 +2,11 @@ body
 {
 	background-color: lightgrey;
 }
+
 .responsive_image
 {
 	float: left;
 	margin: 5%;
-	border: 2px solid black;
 	width: 20%;
 	height: 30%;
 }
@@ -35,7 +35,7 @@ body
 	font-family: "Arial";
 	font-size: 18px; 
 	box-shadow:  10px 10px 5px grey;
-	background-color: #c9dbdc;
+	background-color: #cbdbdc;
 
 
 
