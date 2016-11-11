@@ -1,10 +1,10 @@
 const Backbone = require('backbone');
 const $ = require('jquery');
-Backbone.$= $;
+Backbone.$ = $;
 module.exports = Backbone.Model.extend({
-	defauls: {
-		b_name:'',//book name
-		auther:'',//auther name
-		catagory:''//book catagory 
-	}
+  defauls: {
+    b_name: '', // book name
+    auther: '', // auther name
+    catagory: '' // book catagory
+  }
 });

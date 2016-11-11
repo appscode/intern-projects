@@ -1,3 +1,10 @@
 const Backbone = require('backbone');
 const $ = require('jquery');
-Backbone.$= $;
+Backbone.$ = $;
+Backbone.LocalStorage = require('backbone.localstorage');
+const Book = require('../models/book');
+
+module.exports = Backbone.Collection.extend({
+  model: Book,
+  localstorage: new Backbone.LocalStorage('book_storage')
+});
