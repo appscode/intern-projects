@@ -4,7 +4,7 @@
 	margin-left: 20%;
 	margin-right: 20%; 
 	width: 60%;
-	height: 100%;
+	height: 30%;
 	background-color: rgba(102,102,51,0.1);
 
 }
@@ -34,7 +34,6 @@
 	font-family: "Arial";
 	font-size: 20px;
 	background-color: rgba(72, 92, 90, 0.15);
-	box-shadow: 10px 10px 5px grey;
 
 }
 .responsiveOverview
@@ -46,7 +45,6 @@
 	width: 90%;
 	font-family: "Arial";
 	font-size: 18px; 
-	box-shadow:  10px 10px 5px grey;
 	background-color: rgba( 95, 107, 97, 0.2);
 	overflow-y: auto;
 
@@ -57,24 +55,11 @@
 {
 	.responsive_image
 	{
-		float: center;
-		margin: 5%;
-		border: 2px solid black;
-		width: 50%;
-		height: 60%;
+		
 	}
 	.responsive_table
 	{
-		float: left;
-		margin-top: 10%;
-		margin-left: 5%;
-		width: 100%;
-		height: 30%;
-		font-family: "Arial";
-		font-size: 20px;
-		background-color: #c9dbdc;
-		box-shadow: 10px 10px 5px white;
-
+		
 	}
 }
 @media only screen and (max-width: 400px)
