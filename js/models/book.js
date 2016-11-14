@@ -4,8 +4,11 @@ Backbone.$ = $;
 module.exports = Backbone.Model.extend({
   defauls: {
     title: '', // book name
-    auther: '', // auther name
-    edition: '', // book catagory
+    author: '', // author name
+    edition: '', // book editon
+    catagory: '', // book catagory
+    price: '',
+    abstract: '',
     bookImage: '', // book cover image direcory
     bookId: ''
   }

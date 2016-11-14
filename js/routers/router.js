@@ -1,11 +1,13 @@
 const Backbone = require('backbone');
 const $ = require('jquery');
-const AddNewBook = require('../views/add_book');
+const AddBook = require('../views/add_book');
+const BooKList = require('../views/book_list');
 Backbone.$ = $;
+
 module.exports = Backbone.Router.extend({
   constructor(options) {
     Backbone.Router.prototype.constructor.call(this, options);
-    // this.books = options.books;
+    this.books = options.books;
     // console.log('in router');
   },
   routes: {
@@ -13,11 +15,14 @@ module.exports = Backbone.Router.extend({
     'new': 'AddBook'
   },
   home() {
-    console.log('found home!');
+    console.log('size: ', this.books.length);
+    const bookList = new BooKList({books: this.books});
+    bookList.render();
   },
   AddBook() {
     // console.log('add new books!');
-    const addnewBook = new AddNewBook();
-    addnewBook.render();
+    console.log('size: >>>>', this.books.length);
+    const addBook = new AddBook({books: this.books});
+    addBook.render();
   }
 });

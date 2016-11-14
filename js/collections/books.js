@@ -8,7 +8,8 @@ module.exports = Backbone.Collection.extend({
   model: Book,
   localstorage: new Backbone.LocalStorage('book_storage'),
 
-  GenerateId() {
+  generateId() {
     return this.length ? this.last().get('bookId') + 1 : 1;
-  }
+  },
+  comparator: 'bookId'
 });

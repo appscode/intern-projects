@@ -1,4 +1,4 @@
-<form class="form-horizontal">
+<form class="form-horizontal" id="formId" enctype="multipart/form-data">
               <label class="control-label col-sm-2">Book Name:</label>
               <input type="text" class="form-control" id="bName" placeholder="Book Name" style="width: 40%" required>
               <br>
@@ -12,7 +12,7 @@
               <br>
 
               <label class="control-label col-sm-2">Category:</label>
-              <input type="text" class="form-control" id="category" placeholder="Book category" style="width: 40%" required>
+              <input type="text" class="form-control" id="catagory" placeholder="Book category" style="width: 40%" required>
               <br>
 
               <label class="control-label col-sm-2">Price:</label>
@@ -20,11 +20,11 @@
               <br>
 
               <label class="control-label col-sm-2">Abstract:</label>
-              <textarea class="form-control" id="AuthorName" placeholder="Write the abstract of the book you want to add" style="width: 40%" required></textarea>
+              <textarea class="form-control" id="abstract" placeholder="Write the abstract of the book you want to add" style="width: 40%" required></textarea>
               <br>
 
               <label class="control-label col-sm-2">Image:</label>
-              <input type="file" id="image" accept="image/*" required>
+              <input type="file" name="fileToUpload" id="fileToUpload" accept="image/*" required>
               <br>
 
               <label class="control-label col-sm-2"></label>

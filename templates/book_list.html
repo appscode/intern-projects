@@ -1,10 +1,12 @@
 <div class="page-header">
   <h3>Books List</h3>
 </div>
+{% for item in items %}
 <div class="book-show-block">
-  <img src="../images/Beginning-Ubuntu-Linux.jpg" class="img-rounded" alt="Beginning Ubuntu Linux" width="140",height="165">
-  <p>Beginning Ubuntu Linux good good good good good good good good good good good</p>
-  <p>Auther: i don't know</p>
-  <p>Edition: --</p>
+  <img src= {{ item.bookImage }} class="img-rounded" alt= {{ item.title }} width="140",height="165">
+  <p>{{ item.title }}</p>
+  <p>Author: {{ item.author }}</p>
+  <p>Edition: {{ item.edition }}</p>
   <a href="#/details" class="btn btn-primary" role="button">Details</a>
 </div>
+{% endfor %}
