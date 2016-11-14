@@ -21,47 +21,46 @@
 	</nav>
 
 	<!-- Details part start-->
+	<script id='details_template' type="text/template">
+		
 	<div class='container rounded'>
 		 <div>
-			<div class="responsive_image">
-				<img class="img-rounded" src="../Book_Images/l1.jpg" width="100%" height="100%">
-			</div>
-			<div class="responsive_table img-rounded">
+			<img class="img-rounded cover" src= <%= image %> >
+			<div class="table rounded">
 		    <table style="margin: 3%;width: 100%">
 		    	<th style="width: 10%"></th>
 		    	<th></th>
 		    	<tr>
 		    		<td>Title</td>
-		    		<td>: Linux programming by example</td>
+		    		<td>: <%= title %> </td>
 		    	</tr>
 		    	<tr>
 		    		<td>Author</td>
-		    		<td>: Arnold Robbins</td>
+		    		<td>: <%= author %> </td>
 		    	</tr>
 		    	<tr>
 		    		<td>Edition</td>
-		    		<td>: 1st</td>
+		    		<td>: <%= edition %> </td>
 		    	</tr>
 		    	<tr>
 		    		<td>Category</td>
-		    		<td>: Computer Science</td>
+		    		<td>: <%= category %> </td>
 		    	</tr>
 		    	<tr>
 		    		<td>Price</td>
-		    		<td>: $300</td>
+		    		<td>: <%= price %> </td>
 		    	</tr>
 		    </table>
 		    </div>
 		</div>
 		<!--overview goes here	-->
-		<div class="rounded responsiveOverview">
+		<div class="rounded Overview">
 			<h3 style="padding-left: 2%">Overview:</h3>
 			<hr style="border-color: black">
-			<p style="padding-left:2%">
-				Linux Programming By Example introduces programmers with some background in C but no knowledge of the specifics of Linux programming to the fundamentals of Linux system programming and application development. Topics covered include using GNU development tools, system programming, file handling in Linux, interprocess communication, network programming, application programming interfaces, debugging and memory management, and version control and software distribution.
-			</p>
+			<p style="padding-left:2%"> <%= overview %> </p>
 		</div>
 	</div>
+	</script>
 
 </body>
 </html>
