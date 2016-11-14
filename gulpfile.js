@@ -281,7 +281,7 @@ gulp.task('reload', function() {
 /* Static server which rewrites all non static file requests back to index.html */
 gulp.task('serve', function() {
   browserSync.init({
-    port: 12345,
+    port: 12344,
     open: false,
     server: {
       baseDir: 'dist/'
