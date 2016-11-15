@@ -8,15 +8,22 @@ module.exports = Backbone.Router.extend({
     this.books = options.books;
     this.bookList = options.bookList;
     this.addBook = options.addBook;
+    this.bookDetails = options.bookDetails;
   },
   routes: {
     '': 'home',
-    'new': 'AddBook'
+    'new': 'AddBook',
+    'details/:id': 'Details'
   },
   home() {
     this.bookList.render();
   },
   AddBook() {
     this.addBook.render();
+  },
+  Details(bid) {
+    const that = this;
+    // console.log(id);
+    this.bookDetails.render(that.books.where({id: bid}));
   }
 });
