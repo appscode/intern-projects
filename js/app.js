@@ -9,7 +9,9 @@ const AppRouter = require('./routers/router');
 global.nunjucksEnv = new global.nunjucks.Environment(new global.nunjucks.PrecompiledLoader());
 
 const books = new Books();
-
 global.router = new AppRouter({books});
-
+/* const router = new AppRouter({books});
+router.on('route:home', function() {
+  console.log('it found');
+}); */
 Backbone.history.start();

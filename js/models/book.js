@@ -3,8 +3,13 @@ const $ = require('jquery');
 Backbone.$ = $;
 module.exports = Backbone.Model.extend({
   defauls: {
-    b_name: '', // book name
-    auther: '', // auther name
-    catagory: '' // book catagory
+    title: '', // book name
+    author: '', // author name
+    edition: '', // book editon
+    catagory: '', // book catagory
+    price: '',
+    abstract: '',
+    bookImage: '', // book cover image direcory
+    bookId: ''
   }
 });
