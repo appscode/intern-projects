@@ -1,7 +1,10 @@
+<div class="page-header">
+  <h3>ADD A NEW BOOK</h3>
+</div>
 <form class="form-horizontal" id="formId" enctype="multipart/form-data">
 
               <label class="control-label col-sm-2">Book Name:</label>
-              <input type="text" class="form-control" id="bName" placeholder="Book Name" style="width: 40%" required>
+              <input type="text" class="form-control" id="bName" placeholder="Book Name" style="width: 40%" autofocus required>
               <br>
 
               <label class="control-label col-sm-2">Author Name:</label>
@@ -25,11 +28,12 @@
               <br>
 
               <label class="control-label col-sm-2">Image:</label>
-              <input type="file" name="fileToUpload" id="fileToUpload" accept="image/*" required>
-
+              <input type="file" name="fileToUpload" id="fileToUpload" accept="image/jpg, image/jpeg, image/png" required>
+              <p style="color: #ff9900">[image maximum size: 500 KB and type: .jpg, .png]</p>
               <br>
 
-              <label class="control-label col-sm-2"></label>
-              <button type="submit" class="btn btn-default form-control" style="width: 10%">Submit</button>
-              <br><br><br>
-          </form>
+       <label class="control-label col-sm-2"></label>
+       <button type="submit" class="btn btn-primary form-control" style="width: 10%">Submit</button>
+       <button type="button" id = "cancel" class="btn btn-warning form-control" style="width: 10%">Cancel</button>
+       <br>
+</form>
