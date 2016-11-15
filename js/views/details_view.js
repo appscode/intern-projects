@@ -3,11 +3,12 @@ const $ = require('jquery');
 Backbone.$ = $;
 module.exports = Backbone.View.extend({
   el: '.container',
-  addBookTemplate: 'book_list.html',
-  render(options) {
-    console.log(options.length);
-    console.log(options[0].get('title'));
-    // const allModels = this.books.models;
-    // this.$el.html(global.nunjucksEnv.render(this.addBookTemplate, {items: allModels}));
+  detailsTemplate: 'details.html',
+  render(option) {
+    if (option.length > 0) {
+      this.$el.html(global.nunjucksEnv.render(this.detailsTemplate, {book: option[0]}));
+    } else {
+      alert('Sorry, Page not found. :(');
+    }
   }
 });
