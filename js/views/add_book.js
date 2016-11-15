@@ -56,27 +56,5 @@ module.exports = Backbone.View.extend({
     e.preventDefault();
     const tmppath = URL.createObjectURL(document.getElementById('fileToUpload').files[0]);
     this.getBase64Image(tmppath);
-    // $("img").fadeIn("fast").attr('src',URL.createObjectURL(event.target.files[0]));
-    // book property
-    // console.log(document.getElementById('fileToUpload').files[0].mozFullPath);
-    /* const title = $('#bName').val();
-    const author = $('#AuthorName').val();
-    const edition = $('#edition').val();
-    const catagory = $('#catagory').val();
-    const price = $('#price').val();
-    const abstract = $('#abstract').val();
-    const bookId = this.books.generateId();
-    const bookImage = this.getBase64Image(tmppath);
-    this.books.create({
-      title: title,
-      author: author,
-      edition: edition,
-      catagory: catagory,
-      price: price,
-      abstract: abstract,
-      bookImage: bookImage,
-      bookId: bookId
-    }); */
-    // Backbone.history.navigate('#/', {trigger: true});
   }
 });
