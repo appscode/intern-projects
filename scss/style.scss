@@ -8,13 +8,10 @@
 	text-align: center;
 }
 .container {
-	overflow: auto;
-	padding-bootom: 180px;
+	min-height: 750px;
+	
 }
 .footer {
-	position: relative;
-	margin-top: -180px;
-	height: 180px;
-	clear:
-
+  background-color: #efefef;
+  text-align: center;
 }
