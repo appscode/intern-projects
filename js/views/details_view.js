@@ -1,27 +1,18 @@
-(function() {
-	window.App = {
-		Views= {};
-	}
 
 const Backbone = require('backbone');
 const $ = require('jquery');
 Backbone.$ = $;
 
-App.View.Details = Backbone.View.extend({
+module.exports = Backbone.View.extend({
 
-	
-	template: _.template($('#details_template').html()),
+  el: '.continer',
+  detailsTemplate: 'details.html',
 
-	initialize: function(){
-		this.render();
-	}, 
-
-	render: function(){
-		this.el.html(this.template(this.model.toJSON()));
-	}
-
+  initialize(options) {
+    this.books = options.books;
+  },
+  render() {
+    this.el.html(global.nunjucksEnv.render(this.detailsTemplate, {items: this.books}));
+    return this;
+  }
 });
-
-var book = new BookModel;
-var bookView = new BookView({model: book});
-})();

@@ -9,7 +9,6 @@ module.exports = Backbone.View.extend({
   },
   render() {
     console.log('!!!', this.books.length);
-    debugger;
     this.$el.html(global.nunjucksEnv.render(this.addBookTemplate, {items: this.books}));
   }
 });

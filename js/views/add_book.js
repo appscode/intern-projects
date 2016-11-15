@@ -36,7 +36,7 @@ module.exports = Backbone.View.extend({
     book.bookImage = bookImage;
     book.bookId = bookId;
     this.books.add(book);
-    this.localStorage().setItem('test', this.books.join(","));
+    this.localStorage().setItem('test', this.books.join(','));
     console.log(this.books);
     console.log(this.books.length);
     Backbone.history.navigate('#/', {trigger: true});

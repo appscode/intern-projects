@@ -1,66 +1,39 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Library</title>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet"  href="../scss/bootstrap.min.css">
-	<link rel="stylesheet"  href="../scss/style_details.css">
-	<!--script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script-->
-</head>
-
-<body style="margin: 5px">
-	<!-- Navigation bar -->
-	<nav class="navbar navbar-inverse">
-		<ul class="nav navbar-nav">
-			<li class="active"><a href="#">Home</a></li>
-			<li><a href="#">Category</a></li>
-			<li><a href="#">About</a></li>
-		</ul>
-	</nav>
-
-	<!-- Details part start-->
-	<script id='details_template' type="text/template">
-		
-	<div class='container rounded'>
-		 <div>
-			<img class="img-rounded cover" src= <%= image %> >
-			<div class="table rounded">
-		    <table style="margin: 3%;width: 100%">
-		    	<th style="width: 10%"></th>
-		    	<th></th>
-		    	<tr>
-		    		<td>Title</td>
-		    		<td>: <%= title %> </td>
-		    	</tr>
-		    	<tr>
-		    		<td>Author</td>
-		    		<td>: <%= author %> </td>
-		    	</tr>
-		    	<tr>
-		    		<td>Edition</td>
-		    		<td>: <%= edition %> </td>
-		    	</tr>
-		    	<tr>
-		    		<td>Category</td>
-		    		<td>: <%= category %> </td>
-		    	</tr>
-		    	<tr>
-		    		<td>Price</td>
-		    		<td>: <%= price %> </td>
-		    	</tr>
-		    </table>
-		    </div>
-		</div>
-		<!--overview goes here	-->
-		<div class="rounded Overview">
-			<h3 style="padding-left: 2%">Overview:</h3>
-			<hr style="border-color: black">
-			<p style="padding-left:2%"> <%= overview %> </p>
-		</div>
+{% for item in items  %}
+<div class='container rounded'>
+	 <div>
+		<img class= 'img-rounded cover' src= '../Book_Images/l1.jpg' >
+		<div class='table rounded'>
+	    <table style="margin: 3%;width: 100%">
+	    	<th style="width: 10%"></th>
+	    	<th></th>
+	    	<tr>
+	       		<td>Title</td>
+		   		<td>: {{ item.title }} </td>
+	    	</tr>
+	    	<tr>
+	    		<td>Author</td>
+	    		<td>: {{ item.author }} </td>
+	    	</tr>
+	    	<tr>
+	    		<td>Edition</td>
+	    		<td>: {{ item.edition }} </td>
+	    	</tr>
+	    	<tr>
+	    		<td>Category</td>
+	    		<td>: {{ item.category }} </td>
+	    	</tr>
+	    	<tr>
+	      		<td>Price</td>
+	    		<td>: {{ item.price }} </td>
+	    	</tr>
+	    </table>
+	    </div>
 	</div>
-	</script>
-
-</body>
-</html>
+		<!--overview goes here	-->
+	<div class="rounded Overview">
+		<h3 style="padding-left: 2%">Overview:</h3>
+		<hr style="border-color: black">
+		<p style="padding-left:2%"> {{ item.abstract }} </p>
+	</div>
+</div>
+{% endfor %}
