@@ -3,10 +3,10 @@
 </div>
 {% for item in items %}
 <div class="book-show-block">
-  <img src= "{{ item.attributes.bookImage }}" class="img-rounded" alt= "{{ item.attributes.title }}" width="140",height="165">
+  <img src= "data:image/png;base64,{{ item.attributes.bookImage }}" class="img-rounded" alt= "{{ item.attributes.title }}" width="140px",height="165px">
   <p>{{ item.attributes.title }}</p>
   <p>Author: {{ item.attributes.author }}</p>
   <p>Edition: {{ item.attributes.edition }}</p>
-  <a href="#/details" class="btn btn-primary" role="button">Details</a>
+  <a href="#/details/{{ item.attributes.id }}" class="btn btn-primary" role="button">Details</a>
 </div>
 {% endfor %}
