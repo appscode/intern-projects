@@ -9,7 +9,7 @@ module.exports = Backbone.Model.extend({
     catagory: '', // book catagory
     price: '',
     abstract: '',
-    bookImage: '', // book cover image direcory
+    bookImage: '', // book cover image data
     bookId: ''
   }
 });
