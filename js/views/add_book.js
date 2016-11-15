@@ -54,7 +54,12 @@ module.exports = Backbone.View.extend({
   },
   upload(e) {
     e.preventDefault();
-    const tmppath = URL.createObjectURL(document.getElementById('fileToUpload').files[0]);
-    this.getBase64Image(tmppath);
+    const imagefile = document.getElementById('fileToUpload').files[0];
+    const tmppath = URL.createObjectURL(imagefile);
+    if (imagefile.size > 500000) {
+      alert('File size exceeded');
+    } else {
+      this.getBase64Image(tmppath);
+    }
   }
 });
