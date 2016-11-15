@@ -6,10 +6,10 @@ module.exports = Backbone.View.extend({
   addBookTemplate: 'book_list.html',
   initialize(options) {
     this.books = options.books;
+    this.books.fetch();
   },
   render() {
-    console.log('!!!', this.books.length);
-    debugger;
-    this.$el.html(global.nunjucksEnv.render(this.addBookTemplate, {items: this.books}));
+    const allModels = this.books.models;
+    this.$el.html(global.nunjucksEnv.render(this.addBookTemplate, {items: allModels}));
   }
 });

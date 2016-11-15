@@ -6,10 +6,8 @@ const Book = require('../models/book');
 
 module.exports = Backbone.Collection.extend({
   model: Book,
-  localstorage: new Backbone.LocalStorage('book_storage'),
-
+  localStorage: new Backbone.LocalStorage('book_storage'),
   generateId() {
     return this.length ? this.last().get('bookId') + 1 : 1;
-  },
-  comparator: 'bookId'
+  }
 });

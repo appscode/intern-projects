@@ -1,13 +1,14 @@
 const Backbone = require('backbone');
 const $ = require('jquery');
 Backbone.$ = $;
-const Book = require('../models/book');
+// const Book = require('../models/book');
 module.exports = Backbone.View.extend({
   el: '.container',
   addBookTemplate: 'form.html',
   bookList: '',
   initialize(options) {
     this.books = options.books;
+    console.log('in add book');
   },
   render() {
     this.$el.html(global.nunjucksEnv.render(this.addBookTemplate));
@@ -26,19 +27,16 @@ module.exports = Backbone.View.extend({
     const abstract = $('#abstract').val();
     const bookId = this.books.generateId();
     const bookImage = $('#fileToUpload').val();
-    const book = new Book();
-    book.title = title;
-    book.author = author;
-    book.edition = edition;
-    book.catagory = catagory;
-    book.price = price;
-    book.abstract = abstract;
-    book.bookImage = bookImage;
-    book.bookId = bookId;
-    this.books.add(book);
-    this.localStorage().setItem('test', this.books.join(","));
-    console.log(this.books);
-    console.log(this.books.length);
+    this.books.create({
+      title: title,
+      author: author,
+      edition: edition,
+      catagory: catagory,
+      price: price,
+      abstract: abstract,
+      bookImage: bookImage,
+      bookId: bookId
+    });
     Backbone.history.navigate('#/', {trigger: true});
   }
 });
