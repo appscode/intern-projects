@@ -18,7 +18,10 @@ module.exports = Backbone.View.extend({
   },
   upload(e) {
     e.preventDefault();
+    // let tmppath = URL.createObjectURL(e.target.files[0]);
+    // $("img").fadeIn("fast").attr('src',URL.createObjectURL(event.target.files[0]));
     // book property
+    // console.log(document.getElementById('fileToUpload').files[0].mozFullPath);
     const title = $('#bName').val();
     const author = $('#AuthorName').val();
     const edition = $('#edition').val();
