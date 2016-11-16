@@ -14,7 +14,11 @@ module.exports = Backbone.View.extend({
     this.$el.html(global.nunjucksEnv.render(this.addBookTemplate));
   },
   events: {
-    'submit #formId': 'upload'
+    'submit #formId': 'upload',
+    'click #cancel': 'cancel'
+  },
+  cancel() {
+    Backbone.history.navigate('#/', {trigger: true});
   },
   getBase64Image(path) {
     const img = new Image();

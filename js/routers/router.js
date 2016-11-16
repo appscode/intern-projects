@@ -22,8 +22,8 @@ module.exports = Backbone.Router.extend({
     this.addBook.render();
   },
   Details(bid) {
-    const that = this;
+    // const that = this;
     // console.log(id);
-    this.bookDetails.render(that.books.where({id: bid}));
+    this.bookDetails.render(this.books.where({id: bid}));
   }
 });

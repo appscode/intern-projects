@@ -4,7 +4,7 @@
 {% for item in items %}
 <div class="book-show-block">
   <img src= "data:image/png;base64,{{ item.attributes.bookImage }}" class="img-rounded" alt= "{{ item.attributes.title }}" width="155px" height="190px">
-  <p>{{ item.attributes.title }}</p>
+  <h5>{{ item.attributes.title }}</h5>
   <p>Author: {{ item.attributes.author }}</p>
   <p>Edition: {{ item.attributes.edition }}</p>
   <a href="#/details/{{ item.attributes.id }}" class="btn btn-primary" role="button">Details</a>
