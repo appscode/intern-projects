@@ -1,11 +1,19 @@
 .book-show-block{
 	margin: 20px;
 	width: 240px;
-	height: 370px;
+	height: 400px;
 	padding: 10px;
 	border: .2px solid #E6E6FA;
 	float: left;
 	text-align: center;
+}
+.book-show-block h5{
+	font-size:16px;
+	font-style: italic;
+}
+.book-show-block p{
+	font-size:15px;
+	font-style: italic;
 }
 .container {
 	min-height: 750px;
