@@ -48,6 +48,17 @@ const paths = {
     destDir: 'dist/js'
   },
 
+  js_ext: {
+    files: [
+      'node_modules/nunjucks/browser/nunjucks-slim.min.js',
+      'node_modules/jquery/dist/jquery.min.js',
+      'node_modules/bootstrap/dist/js/bootstrap.min.js'
+      
+    ],
+    destDir: 'dist/js_ext'
+
+  },
+
   templates: {
     files: ['templates/**/*.html'],
     srcDir: 'templates',
@@ -58,6 +69,13 @@ const paths = {
     files: ['scss/**/*.scss'],
     srcDir: 'scss',
     destDir: 'dist/css'
+  },
+
+  css_ext: {
+    files: [
+      'node_modules/bootstrap/dist/css/bootstrap.min.css'
+    ],
+    destDir: 'dist/css_ext'
   },
 
   images: {
@@ -93,6 +111,12 @@ gulp.task('scss', function() {
     .pipe(gulp.dest(paths.scss.destDir));
 });
 
+/* Copy css_ext to dist */
+gulp.task('css_ext:copy', function() {
+  return gulp.src(paths.css_ext.files)
+  .pipe(gulp.dest(paths.css_ext.destDir));
+});
+
 /* Development css task */
 gulp.task('css:dev', function() {
   runSequence('lint:css', 'scss');
@@ -121,9 +145,23 @@ gulp.task('clean', function() {
 
 /* Copies the HTML file to the distribution directory (dev) */
 gulp.task('html:dev', function() {
+  const jsExt = [];
+  const cssExt = [];
+  _.forEach(paths.js_ext.files, (file) => {
+    jsExt.push('/js_ext/' + file.substring(file.lastIndexOf('/') + 1));
+  });
+
+  _.forEach(paths.css_ext.files, (file) => {
+    cssExt.push('/css_ext/' + file.substring(file.lastIndexOf('/') + 1));
+  });
+
   return gulp.src(paths.html.files)
     .pipe(htmlreplace({
-      'js': '/js/build.js'
+      'js': '/js/build.js',
+      'js_ext': jsExt,
+      'css_ext': cssExt,
+      'templates': '/templates/templates.min.js'
+      
     }))
     .pipe(gulp.dest(paths.html.destDir));
 });
@@ -156,6 +194,11 @@ gulp.task('lint:js', function() {
     .pipe(eslint.failAfterError());
 });
 
+/* Copy js_ext to dist */
+gulp.task('js_ext:copy', function() {
+  return gulp.src(paths.js_ext.files)
+  .pipe(gulp.dest(paths.js_ext.destDir));
+});
 
 /* Helper which bundles the JS files and copies the bundle into the distribution file (dev) */
 function bundle(b) {
@@ -295,8 +338,8 @@ gulp.task('serve', function() {
 
 
 /* Builds the distribution directory */
-gulp.task('build:dev', ['html:dev', 'templates', 'js:dev', 'css:dev', 'images', 'fonts']);
-gulp.task('build:prod', ['html:prod', 'templates', 'js:prod', 'css:prod', 'images', 'fonts']);
+gulp.task('build:dev', ['html:dev', 'templates', 'js_ext:copy','js:dev', 'css_ext:copy','css:dev', 'images', 'fonts']);
+gulp.task('build:prod', ['html:prod', 'templates', 'js_ext:copy', 'js:prod', 'css_ext:copy', 'css:prod', 'images', 'fonts']);
 
 
 /* Production deployment task */
