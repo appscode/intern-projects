@@ -8,7 +8,6 @@ module.exports = Backbone.View.extend({
   bookList: '',
   initialize(options) {
     this.books = options.books;
-    console.log('in add book');
   },
   render() {
     this.$el.html(global.nunjucksEnv.render(this.addBookTemplate));
@@ -26,7 +25,6 @@ module.exports = Backbone.View.extend({
     const canvas = document.createElement('canvas');
     const that = this;
     img.onload = function() {
-      console.log('sdfds');
       canvas.width = img.width;
       canvas.height = img.height;
       const ctx = canvas.getContext('2d');
