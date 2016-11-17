@@ -1,7 +1,10 @@
 {
-  "name": "todo",
+  "name": "library",
   "description": "TODO MVC app",
   "version": "1.0.0",
+  "scripts": {
+    "test": "./node_modules/.bin/mocha --reporter spec"
+  },
   "authors": [
     "TigerWorks <eng@thetigerworks.com>"
   ],
