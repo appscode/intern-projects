@@ -1,6 +1,5 @@
 *.class
 dist/
-Book_Images/
 images/
 node_modules/
 bower_components/
