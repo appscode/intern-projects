@@ -12,24 +12,24 @@
 		    	<th style="width: 10%"></th>
 		    	<th></th>
 		    	<tr>
-		    		<td id="T_{{ book.get('title') }}"><strong>Title</strong></td>
-		    		<td>: {{ book.get('title') }}</td>
+		    		<td><strong>Title</strong></td>
+		    		<td id="T">: {{ book.get('title') }}</td>
 		    	</tr>
 		    	<tr>
-		    		<td id="A_{{ book.get('author') }}"><strong>Author</strong></td>
-		    		<td>: {{ book.get('author') }}</td>
+		    		<td><strong>Author</strong></td>
+		    		<td id="A">: {{ book.get('author') }}</td>
 		    	</tr>
 		    	<tr>
-		    		<td id="E_{{ book.get('edition') }}"><strong>Edition</strong></td>
-		    		<td>: {{ book.get('edition') }}</td>
+		    		<td><strong>Edition</strong></td>
+		    		<td id="E">: {{ book.get('edition') }}</td>
 		    	</tr>
 		    	<tr>
-		    		<td id="C_{{ book.get('catagory') }}"><strong>Category</strong></td>
-		    		<td>: {{ book.get('catagory') }}</td>
+		    		<td><strong>Category</strong></td>
+		    		<td id="C">: {{ book.get('catagory') }}</td>
 		    	</tr>
 		    	<tr>
-		    		<td id="P_{{ book.get('price') }}"><strong>Price</strong></td>
-		    		<td>: {{ book.get('price') }}</td>
+		    		<td><strong>Price</strong></td>
+		    		<td id="P">: {{ book.get('price') }}</td>
 		    	</tr>
 		    </table>
 		    </div>
@@ -38,6 +38,6 @@
 		<div class="rounded Overview">
 			<h3 style="padding-left: 2%">Overview:</h3>
 			<hr>
-			<p style="padding: 0px 30px 30px 30px;">{{ book.get('abstract') }}</p>
+			<p id="Ab" style="padding: 0px 30px 30px 30px;">{{ book.get('abstract') }}</p>
 		</div>
 	</div>

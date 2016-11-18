@@ -10,7 +10,7 @@ module.exports = Backbone.View.extend({
     this.books = options.books;
   },
   render() {
-    this.$el.html(global.nunjucksEnv.render(this.addBookTemplate);
+    this.$el.html(global.nunjucksEnv.render(this.addBookTemplate));
   },
   events: {
     'submit #formId': 'upload',
