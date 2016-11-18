@@ -1,8 +1,12 @@
 *.class
+Book_Images/
 dist/
 images/
 node_modules/
 bower_components/
+.firebaserc
+database.rules.json
+firebase.json
 
 .DS_Store
 npm-debug.log

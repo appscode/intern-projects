@@ -10,7 +10,9 @@
 .rounded {
 	border-radius: 10px;
 }
-
+hr {
+	border-color: black;
+}
 .cover {
 	float: left;
 	margin-top: 5%;
@@ -20,114 +22,34 @@
 	width: 20%;
 	height: 30%;
 }
-.table {
+.tableHolder {
 	float: left;
-	margin-top: 10%;
+	margin-top: 2%;
 	margin-left: 0%;
 	margin-right: 5%;
 	width: 65%;
-	height: 30%;
+	min-height: 300px;
 	font-family: "Arial";
 	font-size: 20px;
-	background-color: #e6f0ff;
-
+	background-color: rgba(109,69,58,0.06); 
+}
+td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid white;
+    font-size: 15px;
 }
 .Overview {
-	margin-top: 5%;
 	margin-left: 5%;
 	margin-right: 5%;
 	margin-bottom: 10%; 
 	width: 90%;
 	font-family: "Arial";
-	font-size: 18px; 
-	background-color: #e6f0ff;
+	font-size: 18px;
+	background-color: rgba(109,69,58,0.06); 
 	overflow-y: auto;
-    padding: 50px 50px 50px 50px;
+	text-align: justify;
 
-
-
-}
-@media only screen and (max-width: 700px) {
-	.details_container {
-		margin-left: 5%;
-		margin-right: 5%; 
-		width: 90%;
-		height: 30%;
-		/*background-color: rgba(150,102,151,0.1);*/
-		
-
-	}
-	.cover {
-		margin-top: 3%;
-		margin-left:25%;
-		margin-right: 15%;
-		margin-bottom: 3%;
-		width: 50%;
-		height: 20%;
-	}
-	.table {
-		margin-top: 0%;
-		margin-left: 2%;
-		margin-right: 2%;
-		margin-bottom: 5%;
-		width: 96%;
-		font-family: "Arial";
-		font-size: 20px;
-		background-color: #EEEEEE;
-
-	}
-	.Overview {
-		margin-top: 15%;
-		margin-left: 2%;
-		margin-right: 2%;
-		margin-bottom: 10%; 
-		width: 96%;
-		font-family: "Arial";
-		font-size: 18px; 
-		background-color: #EEEEEE;
-		overflow-y: auto;
-	}
-}
-@media only screen and (max-width: 400px) {
-		.details_container {
-		margin-left: 5%;
-		margin-right: 5%; 
-		width: 90%;
-		height: 30%;
-		/*background-color: rgba(150,102,151,0.1);*/
-		
-	}
-	.cover {
-		margin-top: 3%;
-		margin-left:25%;
-		margin-right: 15%;
-		margin-bottom: 3%;
-		width: 50%;
-		height: 20%;
-	}
-	.table {
-		margin-top: 0%;
-		margin-left: 2%;
-		margin-right: 2%;
-		margin-bottom: 5%;
-		width: 96%;
-		font-family: "Arial";
-		font-size: 20px;
-		background-color: #EEEEEE;
-
-	}
-	.Overview {
-		margin-top: 15%;
-		margin-left: 2%;
-		margin-right: 2%;
-		margin-bottom: 10%; 
-		width: 96%;
-		font-family: "Arial";
-		font-size: 18px; 
-		background-color: #EEEEEE;
-		overflow-y: auto;
-
-	}
 }
 #remove {
 	float: right;

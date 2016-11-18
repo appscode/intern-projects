@@ -8,7 +8,6 @@ module.exports = Backbone.View.extend({
   bookList: '',
   initialize(options) {
     this.books = options.books;
-    console.log('in add book');
   },
   render() {
     this.$el.html(global.nunjucksEnv.render(this.addBookTemplate));
@@ -26,7 +25,6 @@ module.exports = Backbone.View.extend({
     const canvas = document.createElement('canvas');
     const that = this;
     img.onload = function() {
-      console.log('sdfds');
       canvas.width = img.width;
       canvas.height = img.height;
       const ctx = canvas.getContext('2d');
@@ -34,26 +32,42 @@ module.exports = Backbone.View.extend({
 
       const dataURL = canvas.toDataURL('image/png');
       // alert(dataURL.replace(/^data:image\/(png|jpg);base64,/, ''));
-      const title = $('#bName').val();
-      const author = $('#AuthorName').val();
+      const title = $('#bName').val().trim();
+      const author = $('#AuthorName').val().trim();
       const edition = $('#edition').val();
-      const catagory = $('#catagory').val();
+      const catagory = $('#catagory').val().trim();
       const price = $('#price').val();
-      const abstract = $('#abstract').val();
+      const abstract = $('#abstract').val().trim();
       const bookId = that.books.generateId();
-      const bookImage = dataURL.replace(/^data:image\/(png|jpg);base64,/, '');
-      that.books.create({
-        title: title,
-        author: author,
-        edition: edition,
-        catagory: catagory,
-        price: price,
-        abstract: abstract,
-        bookImage: bookImage,
-        bookId: bookId
-      });
-      Backbone.history.navigate('#/', {trigger: true});
-      // return dataURL.replace(/^data:image\/(png|jpg);base64,/, '');
+      if (title.length === 0 || author.length === 0 || catagory.length === 0 || abstract.length === 0) {
+        let empty = '';
+        if (title.length === 0) {
+          empty = empty + (empty.length === 0 ? ' ' : ', ') + 'Book Name';
+        }
+        if (author.length === 0) {
+          empty = empty + (empty.length === 0 ? ' ' : ', ') + 'Author Name';
+        }
+        if (catagory.length === 0) {
+          empty = empty + (empty.length === 0 ? ' ' : ', ') + 'Catagory';
+        }
+        if (abstract.length === 0) {
+          empty = empty + (empty.length === 0 ? ' ' : ', ') + 'Abstract';
+        }
+        alert('Following fields are empty: ' + empty);
+      } else {
+        const bookImage = dataURL.replace(/^data:image\/(png|jpg);base64,/, '');
+        that.books.create({
+          title: title,
+          author: author,
+          edition: edition,
+          catagory: catagory,
+          price: price,
+          abstract: abstract,
+          bookImage: bookImage,
+          bookId: bookId
+        });
+        Backbone.history.navigate('#/', {trigger: true});
+      }
     };
   },
   upload(e) {

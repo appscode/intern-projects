@@ -1,7 +1,10 @@
 {
-  "name": "todo",
+  "name": "library",
   "description": "TODO MVC app",
   "version": "1.0.0",
+  "scripts": {
+    "test": "./node_modules/.bin/mocha --reporter spec"
+  },
   "authors": [
     "TigerWorks <eng@thetigerworks.com>"
   ],
@@ -21,6 +24,7 @@
     "aliasify": "^1.8.0",
     "babel-preset-es2015": "^6.1.4",
     "babelify": "^7.2.0",
+    "bootstrap": "^3.3.7",
     "browser-sync": "^2.10.0",
     "browserify": "^12.0.1",
     "del": "^2.0.2",
