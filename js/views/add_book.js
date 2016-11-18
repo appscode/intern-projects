@@ -39,7 +39,7 @@ module.exports = Backbone.View.extend({
       const price = $('#price').val();
       const abstract = $('#abstract').val().trim();
       const bookId = that.books.generateId();
-      if (title.length === 0 || author.length === 0 || catagory.length === 0 || abstract.length === 0) {
+      if (title.length === 0 || author.length === 0 || catagory.length === 0 || abstract.length === 0 || edition.length === 0 || price.length === 0) {
         let empty = '';
         if (title.length === 0) {
           empty = empty + (empty.length === 0 ? ' ' : ', ') + 'Book Name';
@@ -52,6 +52,12 @@ module.exports = Backbone.View.extend({
         }
         if (abstract.length === 0) {
           empty = empty + (empty.length === 0 ? ' ' : ', ') + 'Abstract';
+        }
+        if (edition.length === 0) {
+          empty = empty + (empty.length === 0 ? ' ' : ', ') + 'Edition';
+        }
+        if (price.length === 0) {
+          empty = empty + (empty.length === 0 ? ' ' : ', ') + 'Price';
         }
         alert('Following fields are empty: ' + empty);
       } else {
