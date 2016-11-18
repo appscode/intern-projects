@@ -12,23 +12,23 @@
 		    	<th style="width: 10%"></th>
 		    	<th></th>
 		    	<tr>
-		    		<td><strong>Title</strong></td>
+		    		<td id="T_{{ book.get('title') }}"><strong>Title</strong></td>
 		    		<td>: {{ book.get('title') }}</td>
 		    	</tr>
 		    	<tr>
-		    		<td><strong>Author</strong></td>
+		    		<td id="A_{{ book.get('author') }}"><strong>Author</strong></td>
 		    		<td>: {{ book.get('author') }}</td>
 		    	</tr>
 		    	<tr>
-		    		<td><strong>Edition</strong></td>
+		    		<td id="E_{{ book.get('edition') }}"><strong>Edition</strong></td>
 		    		<td>: {{ book.get('edition') }}</td>
 		    	</tr>
 		    	<tr>
-		    		<td><strong>Category</strong></td>
+		    		<td id="C_{{ book.get('catagory') }}"><strong>Category</strong></td>
 		    		<td>: {{ book.get('catagory') }}</td>
 		    	</tr>
 		    	<tr>
-		    		<td><strong>Price</strong></td>
+		    		<td id="P_{{ book.get('price') }}"><strong>Price</strong></td>
 		    		<td>: {{ book.get('price') }}</td>
 		    	</tr>
 		    </table>
