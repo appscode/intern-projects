@@ -1,4 +1,4 @@
-<div class="page-header">
+<div class="page-header" id="home">
   <h3>Books List</h3>
 </div>
 {% for item in items %}
@@ -7,6 +7,6 @@
   <h5>{{ item.attributes.title }}</h5>
   <p>Author: {{ item.attributes.author }}</p>
   <p>Edition: {{ item.attributes.edition }}</p>
-  <a href="#/details/{{ item.attributes.id }}" class="btn btn-primary" role="button">Details</a>
+  <a href="#/details/{{ item.attributes.id }}" class="btn btn-primary" id="Btn{{ item.attributes.bookId }}" role="button">Details</a>
 </div>
 {% endfor %}
