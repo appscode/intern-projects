@@ -7,6 +7,6 @@
   <h5>{{ item.attributes.title }}</h5>
   <p>Author: {{ item.attributes.author }}</p>
   <p>Edition: {{ item.attributes.edition }}</p>
-  <a href="#/details/{{ item.attributes.id }}" class="btn btn-primary" role="button">Details</a>
+  <a id = 'detailsBtn' href="#/details/{{ item.attributes.id }}" class="btn btn-primary" role="button">Details</a>
 </div>
 {% endfor %}
